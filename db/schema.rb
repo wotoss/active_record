@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_06_195255) do
+ActiveRecord::Schema.define(version: 2022_02_06_221054) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.integer "balance_cents"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "status", default: "pending"
   end
 
   create_table "transfers", force: :cascade do |t|
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 2022_02_06_195255) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "gender"
     t.integer "balance_cents"
+    t.integer "lock_version", default: 0
   end
 
   add_foreign_key "transfers", "companies"

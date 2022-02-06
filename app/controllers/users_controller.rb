@@ -45,6 +45,9 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  # eu adicionei este tratamento => StaleObjectError vindo da minha model, referente Locking otimista
+  rescue ActiveRecord::StaleObjectError
+    redirect_to users_path, notice: 'Unpermitted updating'
   end
 
   # DELETE /users/1 or /users/1.json
