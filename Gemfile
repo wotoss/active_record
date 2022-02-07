@@ -31,6 +31,15 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  #eu estou adicionando
+  # esta gem 'factory_bot_rails' cria objetos fakes para nós
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  #juntamente com esta gem faker que gerá dados aliatorios.
+  gem 'faker'
+  #ela trás uma visualização melhor do rails console
+  gem 'awesome_print', require: "ap"
 end
 
 group :development do
